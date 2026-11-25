@@ -1,18 +1,47 @@
-</> HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MEU SITE</title>
 </head>
-<boyd>
-  <h1> MEU SITE SITE </H1>
-  
-  <P> Escollha uma opção:</P>
-  
-  <a href="trampolim.hmtl">
-    <button>TRAMPOLIM</button>
-  </a>
+<body>
 
-  <a href="escada.hmtl">
-    <button> ESCADA</button>
-  </a>
-  <boyd>
-    <html>
+<div id="inicio">
+    <h1>MEU SITE SITE</h1>
+    <p>Escolha uma opção:</p>
 
- 
+    <button onclick="mostrar('trampolim')">TRAMPOLIM</button>
+    <button onclick="mostrar('escada')">ESCADA</button>
+</div>
+
+<div id="trampolim" style="display:none">
+    <h1>TRAMPOLIM</h1>
+    <img src="trampolim.jpg" width="300">
+    <br>
+    <button onclick="mostrar('piscina')">PISCINA</button>
+</div>
+
+<div id="piscina" style="display:none">
+    <h1>PISCINA</h1>
+    <img src="piscina.jpg" width="300">
+    <br>
+    <button onclick="mostrar('escada')">ESCADA</button>
+</div>
+
+<div id="escada" style="display:none">
+    <h1>ESCADA</h1>
+    <img src="escada.jpg" width="300">
+    <br>
+    <button onclick="mostrar('inicio')">VOLTAR</button>
+</div>
+
+<script>
+function mostrar(pagina) {
+    document.querySelectorAll('body > div').forEach(function(div) {
+        div.style.display = 'none';
+    });
+    document.getElementById(pagina).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
